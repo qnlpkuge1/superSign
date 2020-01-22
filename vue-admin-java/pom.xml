@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.lmxdawn</groupId>
+    <artifactId>api</artifactId>
+    <version>0.0.1</version>
+    <modules>
+        <module>api-admin</module>
+        <module>api-common</module>
+        <module>api-core</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <name>api</name>
+    <description>vue后台管理系统</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.3.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--公共模块-->
+            <dependency>
+                <groupId>com.lmxdawn</groupId>
+                <artifactId>api-common</artifactId>
+                <version>${version}</version>
+            </dependency>
+
+            <!--Json 操作-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.61</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+</project>

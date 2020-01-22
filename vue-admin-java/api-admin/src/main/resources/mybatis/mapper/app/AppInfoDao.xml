@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.lmxdawn.api.admin.dao.AppInfoDao">
+
+    <select id="list" parameterType="com.lmxdawn.api.admin.req.appInfo.AppInfoQueryRequest"
+            resultType="com.lmxdawn.api.admin.entity.app.AppInfo">
+        SELECT *
+        FROM `app_info`
+        <where>
+            1=1
+            <if test="appName != null and appName != ''">
+                and `appName` like concat('%', #{appName,jdbcType=VARCHAR}, '%')
+            </if>
+            <if test="ownerId != null">
+                and `owner_id`= #{ownerId}
+            </if>
+        </where>
+        ORDER BY id DESC
+    </select>
+
+    <insert id="insert" keyProperty="id" parameterType="com.lmxdawn.api.admin.entity.app.AppInfo">
+        INSERT INTO `app_info`
+        (`appId`,`appIdReal`,`appName`,`version`,`versionCode`,`path`,`icon_path`,`full_icon_path`,`qrcode_path`,`mbconfig`,`owner_id`,`status`,`install_limit`,`create_time`)
+        values
+        (#{appId},#{appIdReal},#{appName},#{version},#{versionCode},
+        <choose>
+            <when test="path != null">
+                #{path},
+            </when>
+            <otherwise>
+                '',
+            </otherwise>
+        </choose>
+        <choose>
+            <when test="iconPath != null">
+                #{iconPath},
+            </when>
+            <otherwise>
+                '',
+            </otherwise>
+        </choose>
+        <choose>
+            <when test="fullIconPath != null">
+                #{fullIconPath},
+            </when>
+            <otherwise>
+                '',
+            </otherwise>
+        </choose>
+        <choose>
+            <when test="qrcodePath != null">
+                #{qrcodePath},
+            </when>
+            <otherwise>
+                '',
+            </otherwise>
+        </choose>
+        <choose>
+            <when test="mbConfig != null">
+                #{mbConfig},
+            </when>
+            <otherwise>
+                '',
+            </otherwise>
+        </choose>
+        #{ownerId},
+        #{status},
+        #{installLimit},
+        #{createTime}
+        )
+    </insert>
+
+    <update id="updateInstallLimit">
+        update `app_info` set `install_limit` = #{installLimit}
+        where id = #{id}
+    </update>
+
+    <update id="updateIpa">
+        update `app_info` set `icon_path` = #{iconPath},`full_icon_path` = #{fullIconPath}, `path` = #{path},
+        `mbconfig` = #{mbConfig}
+        <if test="version != null">
+            ,version = #{version}
+        </if>
+        <if test="versionCode != null">
+            ,versionCode = #{versionCode}
+        </if>
+        <if test="qrcodePath != null">
+            ,qrcode_path = #{qrcodePath}
+        </if>
+        where id = #{id}
+    </update>
+
+    <update id="enableAppInfo">
+        update `app_info` set `status` = 1
+        where id = #{id}
+        limit 1
+    </update>
+
+    <update id="disableAppInfo">
+        update `app_info` set `status` = 0
+        where id = #{id}
+        limit 1
+    </update>
+
+    <select id="get" resultType="com.lmxdawn.api.admin.entity.app.AppInfo">
+        SELECT *
+        FROM app_info
+        <where>
+            id = #{id}
+        </where>
+        LIMIT 1
+    </select>
+
+
+</mapper>

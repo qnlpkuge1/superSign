@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.lmxdawn.api.admin.dao.DeveloperDao">
+
+    <select id="list" parameterType="com.lmxdawn.api.admin.req.appInfo.AppInfoQueryRequest"
+            resultType="com.lmxdawn.api.admin.entity.Developer">
+        SELECT *
+        FROM `developer`
+        <where>
+            <if test="appName != null and appName != ''">
+                `username` like concat('%', #{appName,jdbcType=VARCHAR}, '%')
+            </if>
+        </where>
+        ORDER BY id
+        DESC
+    </select>
+
+    <select id="findByIds" resultType="com.lmxdawn.api.admin.entity.Developer">
+        SELECT *
+        FROM `developer`
+        <where>
+            id in
+            <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+        ORDER BY id
+        DESC
+    </select>
+
+    <insert id="insert" keyProperty="id" parameterType="com.lmxdawn.api.admin.entity.Developer">
+        INSERT INTO `developer` (`username`,`password`,`cert`,`install_limit`,`app_info_id`,`app_name`,`create_time`)
+        values
+        (#{username},#{password},#{cert},#{installLimit},#{appInfoId},#{appName},#{createTime})
+    </insert>
+
+    <update id="updateAllocat">
+        update `developer` set `app_info_id` = #{appInfoId}, `app_name` = #{appName}
+        where id = #{id}
+    </update>
+
+    <update id="resetInstall">
+        update `developer` set `app_info_id` = 0, `app_name` = '',`install_limit`= #{installLimit}
+        where id = #{id}
+    </update>
+
+    <select id="get" resultType="com.lmxdawn.api.admin.entity.Developer">
+        SELECT *
+        FROM `developer`
+        <where>
+            id = #{id}
+        </where>
+        LIMIT 1
+    </select>
+
+    <select id="findUnallocat" resultType="com.lmxdawn.api.admin.entity.Developer">
+        SELECT *
+        FROM `developer`
+        <where>
+            `app_info_id` = 0
+        </where>
+        LIMIT 20
+    </select>
+
+    <select id="findAll" resultType="com.lmxdawn.api.admin.entity.Developer">
+        SELECT *
+        FROM `developer`
+    </select>
+
+</mapper>

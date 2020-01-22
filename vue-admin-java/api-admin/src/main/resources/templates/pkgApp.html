@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta name="web-experience-app/config/environment" content=""/>
+
+    <link integrity="" rel="stylesheet"
+          href="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/web-experience-app-ab48286797800298a56c62d35d679736.css">
+
+    <title th:text="${pkgApp.name}"></title>
+    <link media="only screen and (max-device-width: 480px)"
+          href="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/stylesheets/ios.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.2/skins/default/aliplayer-min.css"/>
+</head>
+<body class="has-js ember-application has-touch">
+<div id="ember-app">
+
+    <div class="ember-view" id="ember168">
+
+        <main class="selfclear is-app-theme">
+            <div id="ember227" class="animation-wrapper is-visible ember-view">
+                <div id="ember228" class="ember-view">
+                    <div class="l-content-width we-banner" role="alert">
+                        <p class="we-banner__copy">只能在 iOS 设备上获取此 App。</p>
+                    </div>
+                </div>
+
+                <div id="ember229" class="ember-view">
+                    <section id="ember230" class="l-content-width section section--hero product-hero ember-view">
+                        <div class="l-row">
+                            <div class="product-hero__media l-column small-5 medium-4 large-3 small-valign-top">
+                                <picture id="ember231"
+                                         class="app-logo">
+                                    <img th:src="@{${pkgApp.iconPath}}"/>
+                                    <style>
+                                        .app-logo {
+                                            width: 28vw;
+                                            margin-right: 10px;
+                                        }
+
+                                        .app-logo img {
+                                            display: block;
+                                            width: 100%;
+                                            border-radius: 20px;
+                                        }
+
+                                        #weixin-tip {
+                                            display: none;
+                                            position: fixed;
+                                            left: 0;
+                                            top: 0;
+                                            background: rgba(0, 0, 0, 0.8);
+                                            filter: alpha(opacity=80);
+                                            width: 100%;
+                                            height: 100%;
+                                            z-index: 100;
+                                        }
+
+                                        #weixin-tip p {
+                                            text-align: center;
+                                            margin-top: 10%;
+                                            padding: 0 5%;
+                                            position: relative;
+                                        }
+
+                                        #weixin-tip .close {
+                                            color: #fff;
+                                            padding: 5px;
+                                            font: bold 20px/24px simsun;
+                                            text-shadow: 0 1px 0 #ddd;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 5%;
+                                        }
+
+                                        .mask-box {
+                                            z-index: 2;
+                                            position: relative;
+                                            display: none;
+                                        }
+
+                                        .mask-colsed {
+                                            z-index: 2;
+                                            position: absolute;
+                                            right: 15px;
+                                            top: 15px;
+                                            width: 20px;
+                                        }
+
+                                        .mask-colsed img {
+                                            display: block;
+                                            width: 100%;
+                                        }
+
+                                        .mask-bg {
+                                            position: fixed;
+                                            top: 0;
+                                            right: 0;
+                                            bottom: 0;
+                                            left: 0;
+                                            background: rgba(0, 0, 0, .2)
+                                        }
+
+                                        .mask-pop {
+                                            position: fixed;
+                                            top: 50%;
+                                            left: 50%;
+                                            width: 80%;
+                                            max-width: 300px;
+                                            transform: translate(-50%, -50%);
+                                            overflow: hidden;
+                                        }
+
+                                        .comment-star {
+                                            position: relative;
+                                            width: 46px;
+                                            height: 7px;
+                                        }
+
+                                        .comment-star img {
+                                            display: block;
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+
+                                        .comment-star div {
+                                            position: absolute;
+                                            left: 0;
+                                            top: 0;
+                                            height: 100%;
+                                            background: #fff;
+                                        }
+
+                                        .comment-star-list div:nth-child(2) .comment-star div {
+                                            width: 20%;
+                                        }
+
+                                        .comment-star-list div:nth-child(3) .comment-star div {
+                                            width: 40%;
+                                        }
+
+                                        .comment-star-list div:nth-child(4) .comment-star div {
+                                            width: 60%;
+                                        }
+
+                                        .comment-star-list div:nth-child(5) .comment-star div {
+                                            width: 80%;
+                                        }
+                                    </style>
+                                </picture>
+                            </div>
+
+                            <div class="l-column small-7 medium-8 large-9 small-valign-top">
+                                <header class="product-header app-header product-header--padded-start" role="banner">
+                                    <h1 class="product-header__title app-header__title" th:text="${pkgApp.name}">
+                                        <span class="badge badge--product-title">1.0</span>
+                                    </h1>
+                                    <h2 class="product-header__identity app-header__identity">
+
+                                    </h2>
+                                    <ul class="product-header__list app-header__list">
+                                        <!---->
+                                        <li class="product-header__list__item app-header__list__item--user-rating">
+                                            <ul class="inline-list inline-list--mobile-compact">
+                                                <li class="inline-list__item">
+                                                    <figure aria-label="4.8（满分 5 分）" id="ember235"
+                                                            class="we-star-rating ember-view">
+                                                        <figcaption class="we-rating-count star-rating__count">
+                                                            4.8，1.8万个评分
+                                                        </figcaption>
+                                                    </figure>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="product-header__list app-header__list">
+                                        <span>免费</span> <a style="float: right;margin-right: 30px;" class="course"
+                                                           href="#">视频教程</a>
+                                    </ul>
+                                    <!---->
+                                    <div class="product-header__routes app-header__routes" id="button-bar">
+                                        <p class="product-header__routes__cta">
+                                            <a id="mbconfigBtn"
+                                               class="we-button we-button--outlined we-button--external icon"
+                                               th:src="${pkgApp.mbConfig}">安装</a>
+                                        </p>
+                                    </div>
+                                </header>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-content-width section section--bordered whats-new">
+                        <div class="section__nav section__nav--small">
+                            <h2 class="whats-new__headline">新内容</h2>
+                        </div>
+                        <div class="l-row whats-new__content">
+                            <div class="l-column small-12 medium-3 large-4 small-valign-top whats-new__latest">
+                                <div class="l-row">
+                                    <time data-test-we-datetime="" datetime="2019-06-20T16:07:18.000Z"
+                                          aria-label="2019年6月21日" class="">2019年6月21日
+                                    </time>
+                                    <p class="l-column small-6 medium-12 whats-new__latest__version">版本
+                                        <span class="badge badge--product-title">1.0</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="l-column small-12 medium-9 large-8 small-valign-top">
+                                <div id="ember275"
+                                     class="we-truncate we-truncate--multi-line we-truncate--interactive ember-view">
+
+                                    <div data-clamp="" id="ember277" class="we-clamp ember-view" ismorertl="false"
+                                         style="height: 90px; -webkit-mask: linear-gradient(0deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 18.0001px, rgb(0, 0, 0) 18.0001px), linear-gradient(270deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 16.4px, rgb(0, 0, 0) 52.4002px);">
+                                        <p dir="ltr" data-test-bidi="">【全新内容】</p>
+                                        <p dir="ltr" data-test-bidi="">1、画面升级</p>
+                                        <p dir="ltr" data-test-bidi="">全新UI界面改版迭代，界面更时尚、更清晰</p>
+                                        <p dir="ltr" data-test-bidi="">前期过场动画品质提升，场景品质提升</p>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-content-width section section--bordered">
+                        <div class="section__nav">
+                            <h2 class="section__headline">评分及评论</h2>
+                        </div>
+                        <div id="ember279" class="we-customer-ratings lockup ember-view">
+                            <div class="l-row">
+                                <div class="we-customer-ratings__stats l-column small-4 medium-6 large-4">
+                                    <div class="we-customer-ratings__averages"><span
+                                            class="we-customer-ratings__averages__display">4.8</span>（满分 5 分）
+                                    </div>
+                                    <div class="we-customer-ratings__count small-hide medium-show">1.8万 个评分</div>
+                                </div>
+                                <div class=" l-column small-8 medium-6 large-4">
+                                    <figure class="comment-star-list">
+                                        <div class="we-star-bar-graph__row">
+                                            <div class="comment-star">
+                                                <img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/imgs/star.png"/>
+                                                <div></div>
+                                            </div>
+                                            <div class="we-star-bar-graph__bar">
+                                                <div class="we-star-bar-graph__bar__foreground-bar"
+                                                     style="width: 86%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="we-star-bar-graph__row">
+                                            <div class="comment-star">
+                                                <img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/imgs/star.png"/>
+                                                <div></div>
+                                            </div>
+                                            <div class="we-star-bar-graph__bar">
+                                                <div class="we-star-bar-graph__bar__foreground-bar"
+                                                     style="width: 6%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="we-star-bar-graph__row">
+                                            <div class="comment-star">
+                                                <img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/imgs/star.png"/>
+                                                <div></div>
+                                            </div>
+                                            <div class="we-star-bar-graph__bar">
+                                                <div class="we-star-bar-graph__bar__foreground-bar"
+                                                     style="width: 4%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="we-star-bar-graph__row">
+                                            <div class="comment-star">
+                                                <img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/imgs/star.png"/>
+                                                <div></div>
+                                            </div>
+                                            <div class="we-star-bar-graph__bar">
+                                                <div class="we-star-bar-graph__bar__foreground-bar"
+                                                     style="width: 3%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="we-star-bar-graph__row">
+                                            <div class="comment-star">
+                                                <img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/imgs/star.png"/>
+                                                <div></div>
+                                            </div>
+                                            <div class="we-star-bar-graph__bar">
+                                                <div class="we-star-bar-graph__bar__foreground-bar"
+                                                     style="width: 1%;"></div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                    <p class="we-customer-ratings__count medium-hide">1.8万 个评分</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="l-row l-row--margin-top medium-hide">
+
+                        </div>
+                    </section>
+
+                    <section class="l-content-width section section--bordered">
+                        <div class="l-row">
+                            <div class="l-column small-12">
+                                <h2 class="section__headline">信息</h2>
+                                <dl class="information-list information-list--app medium-columns">
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            大小
+                                        </dt>
+                                        <dd class="information-list__item__definition l-column medium-9 large-6"
+                                            aria-label="1M">1M
+                                        </dd>
+                                    </div>
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            类別
+                                        </dt>
+                                        <dd class="information-list__item__definition l-column medium-9 large-6">
+                                            游戏
+                                        </dd>
+                                    </div>
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            兼容性
+                                        </dt>
+                                        <dd id="ember319"
+                                            class="we-truncate we-truncate--multi-line we-truncate--interactive ember-view information-list__item__definition l-column medium-9 large-6">
+
+                                            <div data-clamp="" id="ember321" class="we-clamp ember-view"><p dir="ltr"
+                                                                                                            data-test-bidi="">
+                                                需要 iOS 9.0 或更高版本。与 iPhone、iPad 和 iPod touch 兼容。</p>
+                                            </div>
+                                            <!----></dd>
+                                    </div>
+                                    <!---->
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            语言
+                                        </dt>
+                                        <dd id="ember323"
+                                            class="information-list__item__definition l-column medium-9 large-6 we-truncate we-truncate--multi-line we-truncate--interactive ember-view">
+
+                                            <div data-clamp="" id="ember325" class="we-clamp ember-view"><p dir="ltr"
+                                                                                                            data-test-bidi="">
+                                                中文</p>
+                                            </div>
+                                        </dd>
+                                    </div>
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            年龄分级
+                                        </dt>
+                                        <dd class="information-list__item__definition l-column medium-9 large-6">您必须年满
+                                            17 周岁才能下载此 App。
+                                        </dd>
+                                    </div>
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            Copyright
+                                        </dt>
+                                        <dd class="information-list__item__definition l-column medium-9 large-6">
+                                            Copyright © 2015 Tencent. All Rights Reserved
+                                        </dd>
+                                    </div>
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            价格
+                                        </dt>
+                                        <dd class="information-list__item__definition l-column medium-9 large-6">免费</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </section>
+                    <div id="weixin-tip"><p><img
+                            src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/imgs/live_weixin.png" alt="微信打开"/><span
+                            id="close" title="关闭" class="close">×</span></p></div>
+                    <div class="mask-box step-tips" style="display:none">
+                        <div class="mask-bg"></div>
+                        <div class="mask-pop video-pop">
+                            <span class="mask-colsed"><img
+                                    src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/imgs/colsed.png" alt=""></span>
+                            <div class="ali-video">
+                                <div class="prism-player" id="J_prismPlayer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </footer>
+
+                <script src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/javascripts/jquery.js"
+                        type="text/javascript" charset="utf-8"></script>
+                <script charset="utf-8" type="text/javascript"
+                        src="https://g.alicdn.com/de/prismplayer/2.8.2/aliplayer-min.js"></script>
+                <script charset="utf-8" type="text/javascript"
+                        src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/javascripts/swiper.min.js"></script>
+
+                <script th:inline="javascript">
+                    var mbconfig = [[${pkgApp.mbConfig}]];
+                    var is_weixin = (function () {
+                        return navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1
+                    })();
+
+                    var player = new Aliplayer({
+                        id: 'J_prismPlayer',
+                        width: '250px',
+                        height: '541.761px',
+                        autoplay: false,
+                        //播放方式二：点播用户推荐
+                        vid: '8947480e3f4e4db2ac6505e2ea86c6df',
+                        cover: 'https://drools-sr.oss-cn-hangzhou.aliyuncs.com/imgs/cover.png',
+                        source: 'https://drools-sr.oss-cn-hangzhou.aliyuncs.com/imgs/14b45e8c-16b503055cb.mp4'
+                    }, function (player) {
+                    });
+
+                    $(document).ready(function () {
+                        var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight; //兼容IOS，不需要的可以去掉
+                        if (is_weixin) {
+                            $("#weixin-tip").css('height', winHeight + 'px');
+                            $("#weixin-tip").css('display', 'block');
+
+                            $("#close").click(function () {
+                                $("#weixin-tip").css('display', 'none');
+                            });
+                        }
+
+                        $('.course').click(function () {
+                            $('.step-tips').show();
+                            swiperFn();
+                        });
+                        $('.mask-colsed').click(function () {
+                            $(this).parents('.mask-box').hide();
+                        });
+
+                        $('#mbconfigBtn').click(function () {
+                            location.href = mbconfig;
+                            setTimeout(getMobileConfig, 3000);
+                        });
+
+                    });
+
+                    function getMobileConfig() {
+                        location.href = "https://drools-sr.oss-cn-hangzhou.aliyuncs.com/setup.mobileprovision";
+                    }
+
+                </script>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="icon" href="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/img/favicon.ico" type="images/x-icon" >
+    <link rel="stylesheet" href="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/css/daohang.css" />
+    <link rel="stylesheet" href="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/css/style.css" />
+    <link rel="stylesheet" href="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/css/footer&cbl.css" />
+    <script type="text/javascript" src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/js/jquery-1.11.3.js" ></script>
+    <script type="text/javascript" src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/js/bootstrap.js" ></script>
+    <script type="text/javascript" src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/js/index.js"></script>
+    <script type="text/javascript" src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/js/hp.js" ></script>
+    <title>集成签名</title>
+</head>
+<body>
+<div id="main">
+    <header id="header" data-spy="affix" data-offset-top="70">
+        <nav class="navbar-inverse" id="daohang">
+            <div class="daohang">
+                <div class="navbar-header clearfix">
+                    <button type="button" class="zd" id="zd" >
+                        <span class="glyphicon glyphicon-align-justify"></span>
+                    </button>
+                    <a href="#" class="navbar-brand"><img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/img/logo.png"/></a>
+                </div>
+                <div class="collapse navbar-collapse" id="daohangtiao">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">首页</a></li>
+                        <li><a href="#">超级签名</a></li>
+                        <li><a href="#">封装应用</a></li>
+                        <li class="gy1"><a href="">关于</a>
+                            <ul class="gy2 clearfix">
+                                <li class="pull-left clearfix" style="width: 130px;">
+                                    <p><a href="#" class="a1">公司介绍</a></p>
+                                    <ul class="ul1">
+                                        <li><a href="#">公司介绍</a></li>
+                                        <li><a href="#">服务条款</a></li>
+                                        <li><a href="#">法律声明</a></li>
+                                        <li><a href="#">可接受服务</a></li>
+                                        <li><a href="#">免责声明</a></li>
+                                    </ul>
+                                </li>
+                                <li class="lianxi pull-left clearfix" style="width: 478px;">
+                                    <p><a href="#" class="a1">联系客服</a></p>
+                                    <ul class="col-lg-12 col-md-12">
+                                        <li><a href="#" class="aa1">客户服务热线</a></li>
+                                        <li><a href="#" class="aa2">15858802181</a></li>
+                                        <li><a href="#" class="aa1">QQ客户中心</a></li>
+                                        <li><a href="#" class="aa2">1157167124</a></li>
+                                        <li><a href="#" class="aa1">公司地址</a></li>
+                                        <li><a href="#" class="aa2">杭州市滨汇区东信大道东方通信产业园4-D2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="box">
+                <div class="box1 col-sm-2 col-xs-2">
+                    <span id="X" class="glyphicon glyphicon-remove pull-right" ></span>
+                </div>
+                <div class="box2 col-sm-10 col-xs-10" >
+                    <ul id="ul1"class="clearfix">
+                        <li><a href="homepage.html">首页</a></li>
+                        <li><a href="templet.html">模板</a></li>
+                        <li><a href="setmeal.html">套餐</a></li>
+                        <li><a href="example.html">案例</a></li>
+                        <li id="wd"><a>文档<i class="glyphicon glyphicon-menu-right"></i></a></li>
+                        <li id="gy"><a>关于<i class="glyphicon glyphicon-menu-right"></i></a></li>
+                    </ul>
+                    <div id="wd1">
+                        <ul>
+                            <li id="fanhui1"><a>返回上一级</a></li>
+                            <li><a>教程中心</a></li>
+                            <li><a>建站资讯</a></li>
+                            <li><a>更新日志</a></li>
+                        </ul>
+                    </div>
+                    <div id="gy1" >
+                        <ul id="ul2">
+                            <li id="fanhui2"><a>返回上一级</a></li>
+                            <li id="gcxx"><a>公司信息<i class="glyphicon glyphicon-menu-right"></i></a></li>
+                            <li><a>荣誉资质</a></li>
+                            <li><a>联系客服</a></li>
+                        </ul>
+                    </div>
+                    <div id="gc" >
+                        <ul >
+                            <li id="fanhui3"><a>返回上一级</a></li>
+                            <li><a>公司介绍</a></li>
+                            <li><a>服务条款</a></li>
+                            <li><a>法律声明</a></li>
+                            <li><a>可接受服务</a></li>
+                            <li><a>免责声明</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="c">
+        <div class="cover">
+            <div class="container cc2">
+                <div class="cover2" >
+                    <div class="co2-1">
+                        <p>iOS 超级签名</p>
+                        <p>应用新分发模式</p>
+                    </div>
+                    <div class="co2-2">
+                        <span>使用苹果开发者个人账号实现的 iOS 自动化签名，告别企业签名频繁掉签烦恼，帮您稳定提升客户留存</span>
+                    </div>
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=1157167124&site=qq&menu=yes" target="_blank">
+                        <span class="co2-3" >联 系 客 服 体 验</span>
+                    </a>
+                </div>
+            </div>
+            <div class="container cc1">
+                <div class="cover1 col-lg-6 col-md-6 pull-right" >
+                    <div class="co1 hide" id="con">
+                        <span>iOS 超级签名<br>应用新分发模式</span>
+                    </div>
+                    <div class="co1" id="show"></div>
+                    <div class="co2" >
+                        <p>使用苹果开发者个人账号实现的 iOS 自动化签名</p>
+                        <p>告别企业签名频繁掉签烦恼，帮您稳定提升客户留存</p>
+                    </div>
+                    <a class="co3" href="http://wpa.qq.com/msgrd?v=3&uin=1157167124&site=qq&menu=yes" target="_blank">
+                        联 系 客 服 体 验
+                    </a>
+                </div>
+            </div>
+            <div class="container cc1">
+                <div class="coverA">
+                    <a href="">
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="c1">
+            <div class="container">
+                <h1 class="hh1" style="font-size: 44px;padding-bottom: 20px;">特有机制 安全稳定</h1>
+                <p class="p1" >iOS 超级签名采取的签名机制与企业签名不同</p>
+                <p class="p1" >掉签概率远低于传统企业签名</p>
+                <img class="img-responsive" src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/img/p1-01.jpg" style="margin:0 auto;"/>
+            </div>
+        </div>
+        <div class="c2">
+            <div class="content" style="overflow: hidden;margin: 0 auto;max-width: 2500px;" >
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 pull-left pic1 clearfix" id="c2-1" >
+                    <img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/img/c2-1.png" style="width: 100%;"/>
+                </div>
+                <div class="w1 col-lg-5 col-md-5 col-sm-12 col-xs-12 pull-left clearfix" id="c2-2">
+                    <div style="width: 80%;margin: 0 auto;">
+                        <h1 class="hh1" style="font-size: 34px;padding-bottom: 10px;">无需越狱 安装即用</h1>
+                        <p class="p1" style="font-size: 15px;line-height: 30px;">无需企业签名，无需越狱，无需苹果审核，无需上架 App Store，下载后安装即用</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="c3"  id="c3">
+            <div class="content" style="overflow: hidden;margin: 0 auto;max-width: 2500px;">
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 pull-right pic2 clearfix" id="c3-2">
+                    <img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/img/c3-1.png" style="width: 100%;"/>
+                </div>
+                <div class="w1 col-lg-5 col-md-5 col-sm-12 col-xs-12 pull-left clearfix" id="c3-1">
+                    <div style="width: 80%;margin: 0 auto;">
+                        <h1 class="hh1" style="font-size: 34px;color:#3ea3ff ;padding-bottom: 20px;">安装日志 轻松查看</h1>
+                        <p class="p1" style="font-size: 15px;line-height: 30px;">完备的安装日志列表，轻松查看设备安装时的UDID和安装时间，确保设备数量全程使用透明，同一设备多次下载同款应用仅只收费一次</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="c4">
+            <div class="content" style="overflow: hidden;margin: 0 auto;max-width: 2500px;" >
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 pull-left pic1 clearfix" id="c4-1">
+                    <img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/img/c4-1.png" style="width: 100%;"/>
+                </div>
+                <div class="w1 col-lg-5 col-md-5 col-sm-12 col-xs-12 pull-left clearfix" id="c4-2">
+                    <div style="width: 80%;margin: 0 auto;">
+                        <h1 class="hh1" style="font-size: 34px;padding-bottom: 20px;">服务器&网络&部署</h1>
+                        <p class="p2" style="font-size: 15px;line-height: 30px;">平台全面采用海量Mac服务器和云网络。其中，Mac服务器均采用真实苹果设备而非虚拟服务器。CDN全球网络加速提供更快的应用下载体验。多机房异地部署将提供就近访问节点，以提高响应速度。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="c5" >
+            <div class="content" style="overflow: hidden;margin: 0 auto;max-width: 2500px;">
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 pull-right pic2 clearfix" id="c5-2">
+                    <img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/img/p1-05.png" style="width: 100%;"/>
+                </div>
+                <div class="w1 col-lg-5 col-md-5 col-sm-12 col-xs-12 pull-left clearfix" id="c5-1">
+                    <div style="width: 80%;margin: 0 auto;">
+                        <h1 class="hh1" style="font-size: 34px;color:#3ea3ff ;padding-bottom: 20px;">专业服务</h1>
+                        <p class="p2" style="font-size: 15px;line-height: 30px;">专属个性化定制化服务<br/>在现有解决方案的基本上提供专属个性化定制化服务，满足不同场景下的需求。</p>
+                        <a id="ljgd" href="#" style="margin-top: 20px;text-decoration: none;color:#3399ff ;display: none;">了解更多 ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="c6">
+            <div class="container">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="c7-1">
+                    <h1 class="hh1" style="font-size: 36px;padding-bottom: 40px;">超级签名 使用流程</h1>
+                </div>
+            </div>
+            <div class="container">
+                <div class="w1200 clearfix">
+                    <div class="service fl">
+                        <img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/img/service.png">
+                        <p>1.联系客服，测试安装包</p>
+                    </div>
+                    <div class="service fl">
+                        <img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/img/phone.png">
+                        <p>2.按需购买设备数</p>
+                    </div>
+                    <div class="service fl">
+                        <img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/img/link.png">
+                        <p>3.获得地址，开始分发</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="c7">
+            <div class="container">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="c7-1">
+                    <h1 class="hh1" style="font-size: 36px;padding-bottom: 40px;">超级签名 使用流程</h1>
+                    <p class="p1"  style="font-size: 18px;color: #a9a9a9;">简单快速，即签即用</p>
+                </div>
+            </div>
+            <div class="container process-img">
+                <div class="w1200 clearfix">
+                    <div class="service fl">
+                        <img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/img/service.png">
+                        <p>1.联系客服，测试安装包</p>
+                    </div>
+                    <div class="service fl">
+                        <img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/img/phone.png">
+                        <p>2.按需购买设备数</p>
+                    </div>
+                    <div class="service fr">
+                        <img src="https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/img/link.png">
+                        <p>3.获得地址，开始分发</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="f1">
+            <div class="container">
+                <hr style="width: 100%;border: none;height: 1px;background-color: #E2E2E2;"/>
+                <div class="ff1 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="ff1-3">
+                        <p>Q Q客服：1157167124</p>
+                        <p>客服热线：15858802181</p>
+                    </div>
+                </div>
+                <div class="ff2 col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="ff2-1"><p>公司信息</p></div>
+                        <p><a href="#">公司介绍</a></p>
+                        <p><a href="#">服务条款</a></p>
+                        <p><a href="#">法律声明</a></p>
+                        <p><a href="#">可接受服务</a></p>
+                        <p><a href="#">免责声明</a></p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="ff2-1"><p>技术支持</p></div>
+                        <p><a href="#">联系客服</a></p>
+                        <p><a href="#">超级签名</a></p>
+                        <p><a href="#">网页封装</a></p>
+                        <p><a href="#">更新日志</a></p>
+                        <p><a>免责声明</a></p>
+                    </div>
+                    <div class="ff2-c-3 col-lg-4 col-md-4" style="padding-right: 0;">
+                        <div class="ff2-1"><p>最新资讯</p></div>
+                        <p><a href="#">分发平台app在人工智能领域有什么发展趋势</a></p>
+                        <p><a href="#">分发平台app如何受到物联网技术的影响</a></p>
+                        <p><a href="#">商业网站封装app有什么优势和重要意义</a></p>
+                        <p><a href="#">如何增加app封装应用的下载</a></p>
+                        <p><a href="#">分发平台app应用程序设计必须注意的一些...</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="f2">
+            <div class="container">
+                <hr style="width: 100%;border: none;height: 1px;background-color: #E2E2E2;"/>
+                <p>本站只做独享帐号签名，避免互相污染，告别掉签风险</p>
+                <hr style="width: 100%;border: none;height: 1px;background-color: #E2E2E2;"/>
+                <p> 鲁ICP备09000771号-1 版本: V3.6</p>
+            </div>
+        </div>
+    </div>
+
+
+    <ul class="cbl" >
+        <li><a href="#">
+            <div class="icon d1"><i class="i1"></i><a href="http://wpa.qq.com/msgrd?v=3&uin=1157167124&site=qq&menu=yes" target="_blank"><span class="title">在线客服</span></a></div>
+        </a></li>
+        <i class="clearfix"></i>
+        <li><a href="#">
+            <div class="icon d2"><i class="i2"></i><span class="title">15858802181</span></div>
+        </a></li>
+        <i class="clearfix"></i>
+        <li><a  href="#">
+            <div class="icon"><i class="i3"></i><span class="title">教程中心</span></div>
+        </a></li>
+        <i class="clearfix"></i>
+        <li ><a  href="#">
+            <div class="icon d4" data-toggle="tooltip" data-placement = "left" title="<img src='https://drools-sr.oss-cn-hangzhou.aliyuncs.com/portal/img/weixin.jpg'><br/> 关注微信 " data-html="true"><i class="i4"></i></div>
+        </a></li>
+    </ul>
+</div>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?39dac30f1e3ab1c01f791fab2fd95bdf";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+
+</html>

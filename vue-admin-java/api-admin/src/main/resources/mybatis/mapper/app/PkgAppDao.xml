@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.lmxdawn.api.admin.dao.PkgAppDao">
+
+
+    <select id="ownerList" parameterType="com.lmxdawn.api.admin.req.appInfo.AppInfoQueryRequest"
+            resultType="com.lmxdawn.api.admin.entity.PkgApp">
+        SELECT *
+        FROM `pkg_app`
+        <where>
+            1=1
+            <if test="appName != null and appName != ''">
+                and `name` like concat('%', #{appName,jdbcType=VARCHAR}, '%')
+            </if>
+            <if test="ownerId != null">
+                and `owner_id`= #{ownerId}
+            </if>
+        </where>
+        ORDER BY id
+        DESC
+    </select>
+
+    <insert id="insert" keyProperty="id" parameterType="com.lmxdawn.api.admin.entity.app.AppInfo">
+        INSERT INTO `pkg_app`
+        (`name`,`url`,`type`,`removePassword`,`icon_path`,`mbconfig`,`owner_id`,`status`,`create_time`)
+        values
+        (#{name},#{url},#{type},#{removePassword},#{iconPath},#{mbConfig},#{ownerId},#{status},#{createTime})
+    </insert>
+
+
+    <select id="get" resultType="com.lmxdawn.api.admin.entity.PkgApp">
+        SELECT *
+        FROM pkg_app
+        <where>
+            id = #{id}
+        </where>
+        LIMIT 1
+    </select>
+
+    <update id="updateMbconfig">
+        update `pkg_app` set `mbconfig` = #{mbConfig}
+        where id = #{id}
+    </update>
+
+</mapper>

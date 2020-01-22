@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.lmxdawn.api.admin.dao.DeveloperPingLogDao">
+
+    <select id="list" parameterType="com.lmxdawn.api.admin.req.appInfo.AppInfoQueryRequest"
+            resultType="com.lmxdawn.api.admin.entity.DeveloperPingLog">
+        SELECT *
+        FROM `developer_ping_log`
+        <where>
+            <if test="appName != null and appName != ''">
+                `developerName` like concat('%', #{appName,jdbcType=VARCHAR}, '%')
+            </if>
+        </where>
+        ORDER BY id
+        DESC
+    </select>
+
+    <insert id="insert" keyProperty="id" parameterType="com.lmxdawn.api.admin.entity.DeveloperPingLog">
+        INSERT INTO `developer_ping_log` (`developer_id`,`developerName`,`status`,`result`,`create_time`)
+        values
+        (#{developerId},#{developerName},#{status},#{result},#{createTime})
+    </insert>
+
+</mapper>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.lmxdawn.api.admin.dao.InstallLogDao">
+
+    <select id="list" parameterType="com.lmxdawn.api.admin.req.appInfo.AppInfoQueryRequest"
+            resultType="com.lmxdawn.api.admin.entity.InstallLog">
+        SELECT *
+        FROM `install_log`
+        <where>
+            1=1
+            <if test="appName != null and appName != ''">
+                and `appName` like concat('%', #{appName,jdbcType=VARCHAR}, '%')
+            </if>
+            <if test="ownerId != null">
+                and `owner_id`= #{ownerId}
+            </if>
+        </where>
+        ORDER BY id
+        DESC
+    </select>
+
+    <insert id="insert" keyProperty="id" parameterType="com.lmxdawn.api.admin.entity.InstallLog">
+        INSERT INTO `install_log`
+        (`app_info_Id`,`appName`,`udid`,`developer_id`,`developerName`,`product`,`deduction`,`owner_id`,`create_time`)
+        values
+        (#{appInfoId},#{appName},#{udid},#{developerId},#{developerName},#{product},#{deduction},#{ownerId},#{createTime})
+    </insert>
+
+    <select id="findLastInstallLog" resultType="com.lmxdawn.api.admin.entity.InstallLog">
+        SELECT *
+        FROM `install_log`
+        <where>
+            1=1
+            <if test="appInfoId != null">
+                and `app_info_Id`=#{appInfoId}
+            </if>
+            <if test="udid!= null">
+                and `udid`=#{udid}
+            </if>
+        </where>
+        LIMIT 1
+    </select>
+
+</mapper>
